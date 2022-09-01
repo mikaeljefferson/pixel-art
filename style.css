@@ -1,6 +1,6 @@
 #title{
     font-style: italic;
-    
+    text-align: center;
 }
 
 *{
@@ -15,6 +15,7 @@ body{
     display: inline-block;
     width: 35px;
     height: 40px;
+    align-items: center;
 }
 #cor1{
     background-color: black;
