@@ -13,10 +13,7 @@ html, body {
 }
 body{
     background-color:blueviolet;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border-width: 100px;
+    
     
 }
 .color{
@@ -41,12 +38,16 @@ body{
 }
 .pixel {
     background: white;
+    height: 40px;
+    width: 40px;
+    border: solid black 1px;
+
 }
 #pixel-board{
-    height: 600px;
+    height: 200px;
     display: grid;
     grid-template-columns: repeat(5,1fr);
     grid-template-rows: repeat(5,1fr);
-    gap: 1px;
+     
     
 }
