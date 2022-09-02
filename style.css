@@ -6,9 +6,18 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
 }
 body{
     background-color:blueviolet;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-width: 100px;
+    
 }
 .color{
     border: 1px black solid;
@@ -29,4 +38,15 @@ body{
 }
 #cor4{
     background-color: coral;
+}
+.pixel {
+    background: white;
+}
+#pixel-board{
+    height: 600px;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(5,1fr);
+    gap: 1px;
+    
 }
