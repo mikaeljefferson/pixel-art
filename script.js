@@ -1,7 +1,13 @@
 window.onload =function() {
-  function button() {
-      const clickPaleta = document.querySelectorAll('.color');
+  const clickPaleta = document.querySelectorAll('.color');
       const newButton = document.getElementById('button-random-color');
+  function selectColor() {
+    clickPaleta[0].classList.add('selected');
+  }
+  selectColor();
+  function button() {
+      
+    
       
       newButton.addEventListener('click', () => {
         for (let index = 0; index < clickPaleta.length; index += 1) {
@@ -20,6 +26,9 @@ window.onload =function() {
       });
     }
     button();
+    
+    
+    
     let save = localStorage.getItem('colorPalette');
    
     const pixel = document.querySelectorAll('pixel');
