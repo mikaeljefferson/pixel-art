@@ -51,3 +51,10 @@ body{
      
     
 }
+#clear-board{
+    border-radius: 5%;
+  height: 40px;
+  width: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

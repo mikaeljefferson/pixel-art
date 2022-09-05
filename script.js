@@ -56,6 +56,8 @@ window.onload =function() {
     positionButtonClear.addEventListener('click', clear);
   
   
+
+    
   }
 
 
