@@ -14,11 +14,26 @@ window.onload =function() {
           } else {
             clickPaleta[index].style.backgroundColor = `rgb(${cor1}, ${cor2}, ${cor3})`;
           }
-          let savecolorPalette = localStorage.getItem('colorPalette');
+          localStorage.setItem('colorPalette', JSON.stringify(color));
+
         }
       });
     }
     button();
     
+    function anotherColorSelected(event) {
+      const selected = document.querySelector('.selected');
+      selected.classList.remove('selected');
+      event.target.classList.add('selected');
+    }
+    clickPaleta[0].addEventListener('click', anotherColorSelected);
+    clickPaleta[1].addEventListener('click', anotherColorSelected);
+    clickPaleta[2].addEventListener('click', anotherColorSelected);
+    clickPaleta[3].addEventListener('click', anotherColorSelected);
+  
     
+  
+  
   }
+
+  const clickPaleta = document.querySelectorAll('.color');
