@@ -22,6 +22,7 @@ window.onload =function() {
     button();
     let save = localStorage.getItem('colorPalette');
    
+    const pixel = document.querySelectorAll('pixel');
     
     function anotherColorSelected(event) {
       const selected = document.querySelector('.selected');
@@ -34,18 +35,16 @@ window.onload =function() {
     clickPaleta[3].addEventListener('click', anotherColorSelected);
   
     
-    function squarePaint() {
-      const pixelDraw = [];
-      const selected = document.getElementsByClassName('selected');
-      const pixel = document.querySelectorAll('.pixel');
-      for (let index = 0; index < pixel.length; index += 1){
-        pixel[index].addEventListener('click', () => {
-          pixel[index].style.backgroundColor = selected[0].style.backgroundColor;
-          pixelDraw[index] = pixel[index].style.backgroundColor;
-  
-  });
-      }
+    function paint(event) {
+      const paintpixel = document.getElementsByClassName('selected')[0];
+      event.target.style.backgroundColor = paintpixel.style.backgroundColor;
     }
-    squarePaint();
+    
+    for (let index = 0; index < 25; index += 1) {
+      let square = document.getElementsByClassName('pixel')[index];
+    
+      square.addEventListener('click', paint);
+    }
   }
-  const clickPaleta = document.querySelectorAll('.color');
+  const clickPaleta = document.querySelectorAll('.color'); 
+  
