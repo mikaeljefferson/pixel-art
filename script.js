@@ -14,12 +14,14 @@ window.onload =function() {
           } else {
             clickPaleta[index].style.backgroundColor = `rgb(${cor1}, ${cor2}, ${cor3})`;
           }
-          localStorage.setItem('colorPalette', JSON.stringify(color));
+
 
         }
       });
     }
     button();
+    let save = localStorage.getItem('colorPalette');
+   
     
     function anotherColorSelected(event) {
       const selected = document.querySelector('.selected');
