@@ -34,8 +34,18 @@ window.onload =function() {
     clickPaleta[3].addEventListener('click', anotherColorSelected);
   
     
+    function squarePaint() {
+      const pixelDraw = [];
+      const selected = document.getElementsByClassName('selected');
+      const pixel = document.querySelectorAll('.pixel');
+      for (let index = 0; index < pixel.length; index += 1){
+        pixel[index].addEventListener('click', () => {
+          pixel[index].style.backgroundColor = selected[0].style.backgroundColor;
+          pixelDraw[index] = pixel[index].style.backgroundColor;
   
-  
+  });
+      }
+    }
+    squarePaint();
   }
-
   const clickPaleta = document.querySelectorAll('.color');
