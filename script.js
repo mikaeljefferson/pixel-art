@@ -45,6 +45,20 @@ window.onload =function() {
     
       square.addEventListener('click', paint);
     }
+
+    const positionButtonClear = document.querySelector('#clear-board');
+    function clear() {
+      for (let index = 0; index < 25; index += 1) {
+        const square = document.getElementsByClassName('pixel')[index];
+        square.style.backgroundColor = 'white';
+      }
+    }
+    positionButtonClear.addEventListener('click', clear);
+  
+  
   }
+
+
+
   const clickPaleta = document.querySelectorAll('.color'); 
   
