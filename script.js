@@ -1,36 +1,62 @@
 window.onload =function() {
+  
+  
+  const blackBg = document.querySelectorAll('.color')[0];
+  const secondBg = document.querySelectorAll('.color')[1];
+  const thirdBg = document.querySelectorAll('.color')[2];
+  const fourthBg = document.querySelectorAll('.color')[3];
+  const button = document.querySelector('#button-random-color');
+
+  function backgroundColor() {
+    blackBg.style.backgroundColor = 'black';
+    secondBg.style.backgroundColor = 'red';
+    thirdBg.style.backgroundColor = 'blue';
+    fourthBg.style.backgroundColor = 'green';
+  }
+  backgroundColor();
+  
+
+  
+  
   const clickPaleta = document.querySelectorAll('.color');
-      const newButton = document.getElementById('button-random-color');
+      
   function selectColor() {
     clickPaleta[0].classList.add('selected');
   }
   selectColor();
-  function button() {
+  
       
     
       
-      newButton.addEventListener('click', () => {
-        for (let index = 0; index < clickPaleta.length; index += 1) {
-          const cor1 = Math.floor(Math.random() * 255);
-          const cor2 = Math.floor(Math.random() * 255);
-          const cor3 = Math.floor(Math.random() * 255);
-          localStorage.setItem('colorPalette', JSON.stringify(newButton));
-          if (index === 0) {
-            clickPaleta[index].style.backgroundColor = 'black';
-          } else {
-            clickPaleta[index].style.backgroundColor = `rgb(${cor1}, ${cor2}, ${cor3})`;
-          }
-
-
-        }
-      });
+  function randomColor() {
+    button.addEventListener('click', () => {
+      for (let index = 1; index < clickPaleta.length; index += 1) {
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+        const rr = `rgb(${r}, ${g}, ${b})`;
+        clickPaleta[index].style.backgroundColor = rr;
+        
+      }
+    });
+  }
+  
+  
+      randomColor();
+    
+    function colorPut() {
+      if (localStorage.length !== 0) {
+        const recoveredColor = JSON.parse(localStorage.getItem('colorPalette'));
+        const recov1 = recoveredColor.cor1;
+        const recov2 = recoveredColor.cor2;
+        const recov3 = recoveredColor.cor3;
+        clickPaleta[1].style.backgroundColor = recov1;
+        clickPaleta[2].style.backgroundColor = recov2;
+        clickPaleta[3].style.backgroundColor = recov3;
+      }
     }
-    button();
+    colorPut();
     
-    
-    
-    let save = localStorage.getItem('colorPalette');
-   
     const pixel = document.querySelectorAll('pixel');
     
     function anotherColorSelected(event) {
@@ -70,6 +96,7 @@ window.onload =function() {
   }
 
 
+  
 
   const clickPaleta = document.querySelectorAll('.color'); 
   
