@@ -45,12 +45,14 @@ body{
 
 }
 #pixel-board{
-    height: 200px;
+    height: 50spx;
     display: grid;
     grid-template-columns: repeat(5,1fr);
     grid-template-rows: repeat(5,1fr);
      
      background-color: white;
+     width: 50px;
+     
     
 }
 #clear-board{
@@ -72,4 +74,13 @@ body{
 }
 div{
     display: block;
+}
+#main{
+    border: 1px dotted black;
+    flex-direction: column;
+    padding: 1vw;
+}
+.main, .main-class {
+    align-items: center;
+    display: flex;
 }
